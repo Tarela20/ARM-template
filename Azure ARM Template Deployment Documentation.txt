@@ -1,0 +1,39 @@
+Azure ARM Template Deployment Documentation
+Overview
+
+This project demonstrates the deployment of Azure infrastructure using an ARM (Azure Resource Manager) template. The deployment includes:
+
+- Virtual Machine (Windows Server 2022)
+- Virtual Network (VNet)
+- Subnet
+- Network Interface Card (NIC)
+- Public IP Address
+- Network Security Group (NSG)
+
+The infrastructure was deployed using Azure PowerShell.
+
+ Successful Azure PowerShell Commands Used
+1. Connect to Azure Account
+Connect-AzAccount
+2. Create Project Folder
+mkdir ARMTemplates
+cd ARMTemplates
+3. Navigate to Project Folder
+cd $HOME\ARMTemplates
+4. Deploy Initial ARM Template
+New-AzResourceGroupDeployment `
+-ResourceGroupName TarelaResourceGroup `
+-TemplateFile template.json `
+-storageAccountName tarelastorage001
+5. Deploy Virtual Machine ARM Template
+New-AzResourceGroupDeployment `
+-ResourceGroupName TarelaResourceGroup `
+-TemplateFile vmtemplate.json `
+-TemplateParameterObject @{adminPassword="YourSecurePassword123!"}
+6. Deploy Final Parameterized ARM Template
+New-AzResourceGroupDeployment `
+-ResourceGroupName TarelaResourceGroup `
+-TemplateFile vmtemplate.json `
+-TemplateParameterFile vmtemplate.parameters.json
+
+

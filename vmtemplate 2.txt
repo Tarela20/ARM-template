@@ -1,0 +1,36 @@
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "value": "TarelaVM"
+    },
+    "vmSize": {
+      "value": "Standard_D2s_v3"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "adminPassword": {
+      "value": "070315137tT@"
+    },
+    "location": {
+      "value": "North Europe"
+    },
+    "vnetName": {
+      "value": "vmVNet"
+    },
+    "subnetName": {
+      "value": "default"
+    },
+    "publicIpName": {
+      "value": "vmPublicIP"
+    },
+    "nicName": {
+      "value": "vmNIC"
+    }
+  }
+}
+
+
